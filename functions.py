@@ -10,6 +10,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# format and section off value_counts for each variable
+for val in df.columns: print('# ', val, '\n', 'df', '["', val, '"]',
+                             '.value_counts(dropna=False)', '\n',
+                             sep='')
+
 def impute(data, **kwargs):
     ### Impute missing values | kwargs from MICE args
     
