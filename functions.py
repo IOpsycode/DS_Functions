@@ -15,6 +15,27 @@ for val in df.columns: print('# ', val, '\n', 'df', '["', val, '"]',
                              '.value_counts(dropna=False)', '\n',
                              sep='')
 
+# better version of previous function. must be run from cmd.
+def EDA(df, name):
+
+    '''
+    name == string version of df's name
+    proviudes count, unique
+        to use:
+        1. run cmd as administrator
+        2. python scriptpath.py > Output/dfnameEDA.txt
+        3. Enjoy the fruits!!!!!
+    '''
+
+    df.name = name
+    print('#{}\n'.format(df.name))
+    for col in df.columns:
+        print('#{}\n'.format(col))
+        print(df[col].describe())
+        print('\n')
+        print(df[col].value_counts(dropna=False))
+        print('\n')
+
 def impute(data, **kwargs):
     ### Impute missing values | kwargs from MICE args
     
